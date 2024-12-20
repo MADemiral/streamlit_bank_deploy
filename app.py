@@ -88,13 +88,16 @@ model_folder = "models"
 model_path = os.path.join(model_folder, models_available[selected_model_name])
 model = load_model(model_path)
 
-# Set the title of the app
-st.title("ADA442 Project: Model Prediction Interface")
-
-# Description for the user
+st.title("ADA 442 Statistical Learning | Classification")
 st.markdown("""
-    Welcome to the prediction interface for the ADA442 project. 
-    Please fill out the parameters below to make a prediction using the selected model.
+
+### Final Project Assignment: Bank Marketing Data Classification
+
+**Objective**  
+The objective of this project is to build a machine learning model to predict whether a client of a bank will subscribe to a term deposit or not. The dataset used for this project is the Bank Marketing Data Set, which can be found at [UCI ML Repository](https://archive.ics.uci.edu/ml/datasets/Bank+Marketing). Use the “bank-additional.csv” with 10% of the examples (4119), randomly selected from the full dataset, and 20 inputs.
+
+The data is related to direct marketing campaigns (phone calls) of a Portuguese banking institution. The classification goal is to predict if the client will subscribe to a term deposit (`variable y`). The marketing campaigns were based on phone calls. Often, more than one contact with the same client was required to assess if the product (bank term deposit) would be ('yes') or not ('no') subscribed.
+
 """)
 
 # Header for input section

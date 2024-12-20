@@ -18,44 +18,68 @@ def load_model(model_path):
 # Sidebar for model selection
 st.sidebar.title("Select Model")
 models_available = {
-    "Model 1: KNN (MinMax Scaler)": "best_model_1_knn_MinMaxScaler.pkl",
-    "Model 2: KNN (Standard Scaler)": "best_model_2_knn_StandardScaler.pkl",
-    "Model 3: Random Forest": "best_model_3_random_forest.pkl",
+    "Model 1: Decision Tree": "best_model_1_decision_tree.pkl",
+    "Model 2: Logistic Regression (Robust Scaler)": "best_model_2_log_reg_RobustScaler.pkl",
+    "Model 3: Logistic Regression (Standard Scaler)": "best_model_3_log_reg_StandardScaler.pkl",
 }
 selected_model_name = st.sidebar.selectbox("Choose a model", list(models_available.keys()))
 
 # Display model information below the model selection part
 model_info = {
-    "Model 1: KNN (MinMax Scaler)": """
+    "Model 1: Decision Tree": """
     ### Model Information: Model 1
-    - **Type**: K-Nearest Neighbors
-    - **Scaler**: MinMax Scaler
-    - **Details**: Suitable for datasets where features have varying scales.
-    - **Accuracy**: 0.9071 (Cross-validated)
-    - **F1 Score**: 0.8984
-    - **Precision**: 0.8959
-    - **Recall**: 0.9017
+    - **Type**: Decision Tree Classifier
+    - **Details**: 
+      - Max Depth: 5
+      - Min Samples Split: 2
+    - **Accuracy**: 0.9108 (Cross-validated)
+    - **F1 Score**: 0.9082
+    - **Precision**: 0.9120
+    - **Recall**: 0.9053
+    - **Selected Features**: 
+      ['duration', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 
+      'euribor3m', 'nr.employed', 'job_retired', 'contact_telephone', 
+      'month_mar', 'month_may', 'month_oct', 'month_sep', 
+      'poutcome_nonexistent', 'poutcome_success']
     """,
-    "Model 2: KNN (Standard Scaler)": """
+    "Model 2: Logistic Regression (Robust Scaler)": """
     ### Model Information: Model 2
-    - **Type**: K-Nearest Neighbors
-    - **Scaler**: Standard Scaler
-    - **Details**: Suitable for datasets where features need normalization.
-    - **Accuracy**: 0.9071 (Cross-validated)
-    - **F1 Score**: 0.8924
-    - **Precision**: 0.8899
-    - **Recall**: 0.8956
+    - **Type**: Logistic Regression
+    - **Scaler**: Robust Scaler
+    - **Details**: 
+      - C: 10
+      - Penalty: l2
+      - Solver: lbfgs
+    - **Accuracy**: 0.9162 (Cross-validated)
+    - **F1 Score**: 0.9007
+    - **Precision**: 0.8980
+    - **Recall**: 0.9090
+    - **Selected Features**: 
+      ['duration', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 
+      'euribor3m', 'nr.employed', 'job_retired', 'contact_telephone', 
+      'month_mar', 'month_may', 'month_oct', 'month_sep', 
+      'poutcome_nonexistent', 'poutcome_success']
     """,
-    "Model 3: Random Forest": """
+    "Model 3: Logistic Regression (Standard Scaler)": """
     ### Model Information: Model 3
-    - **Type**: Random Forest Classifier
-    - **Details**: Ensemble-based model with 200 trees, max depth 5.
-    - **Accuracy**: 0.9102 (Cross-validated)
-    - **F1 Score**: 0.8918
-    - **Precision**: 0.8889
-    - **Recall**: 0.8956
-    """,
+    - **Type**: Logistic Regression
+    - **Scaler**: Standard Scaler
+    - **Details**: 
+      - C: 10
+      - Penalty: l2
+      - Solver: lbfgs
+    - **Accuracy**: 0.9175 (Cross-validated)
+    - **F1 Score**: 0.8997
+    - **Precision**: 0.8968
+    - **Recall**: 0.9078
+    - **Selected Features**: 
+      ['duration', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 
+      'euribor3m', 'nr.employed', 'job_retired', 'contact_telephone', 
+      'month_mar', 'month_may', 'month_oct', 'month_sep', 
+      'poutcome_nonexistent', 'poutcome_success']
+    """
 }
+
 
 st.sidebar.markdown(model_info[selected_model_name])
 

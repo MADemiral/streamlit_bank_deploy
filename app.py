@@ -36,11 +36,6 @@ model_info = {
     - **F1 Score**: 0.9082
     - **Precision**: 0.9120
     - **Recall**: 0.9053
-    - **Selected Features**: 
-      ['duration', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 
-      'euribor3m', 'nr.employed', 'job_retired', 'contact_telephone', 
-      'month_mar', 'month_may', 'month_oct', 'month_sep', 
-      'poutcome_nonexistent', 'poutcome_success']
     """,
     "Model 2: Logistic Regression (Robust Scaler)": """
     ### Model Information: Model 2
@@ -54,11 +49,6 @@ model_info = {
     - **F1 Score**: 0.9007
     - **Precision**: 0.8980
     - **Recall**: 0.9090
-    - **Selected Features**: 
-      ['duration', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 
-      'euribor3m', 'nr.employed', 'job_retired', 'contact_telephone', 
-      'month_mar', 'month_may', 'month_oct', 'month_sep', 
-      'poutcome_nonexistent', 'poutcome_success']
     """,
     "Model 3: Logistic Regression (Standard Scaler)": """
     ### Model Information: Model 3
@@ -72,11 +62,6 @@ model_info = {
     - **F1 Score**: 0.8997
     - **Precision**: 0.8968
     - **Recall**: 0.9078
-    - **Selected Features**: 
-      ['duration', 'pdays', 'previous', 'emp.var.rate', 'cons.price.idx', 
-      'euribor3m', 'nr.employed', 'job_retired', 'contact_telephone', 
-      'month_mar', 'month_may', 'month_oct', 'month_sep', 
-      'poutcome_nonexistent', 'poutcome_success']
     """
 }
 
